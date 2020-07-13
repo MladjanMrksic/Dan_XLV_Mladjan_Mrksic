@@ -74,6 +74,8 @@
     </Compile>
     <Compile Include="Command\RelayCommand.cs" />
     <Compile Include="Model\ProductModel.cs" />
+    <Compile Include="Validation\LoginValidation.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
