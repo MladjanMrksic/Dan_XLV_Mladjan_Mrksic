@@ -18,7 +18,7 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
         public ManagerViewModel(ManagerView view)
         {
             mv = view;
-            products = productModel.GetAllProducts();
+            Products = productModel.GetAllProducts();
         }
 
         private List<Product> products;
@@ -52,7 +52,7 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
         private void DeleteProductExecute()
         {
             productModel.DeleteProduct(product.ProductID);
-            products = productModel.GetAllProducts();
+            Products = productModel.GetAllProducts();
         }
         private bool CanDeleteProductExecute()
         {
@@ -66,8 +66,6 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
             }
             return false;
         }
-
-
 
         private ICommand logout;
         public ICommand Logout
@@ -107,8 +105,8 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
         private void AddProductExecute()
         {
             AddProductView add = new AddProductView();
-            mv.Close();
             add.Show();
+            Products = productModel.GetAllProducts();
         }
         private bool CanAddProductExecute()
         {
@@ -130,8 +128,8 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
         private void UpdateProductExecute()
         {
             UpdateProductView update = new UpdateProductView(product);
-            mv.Close();
             update.Show();
+            Products = productModel.GetAllProducts();
         }
         private bool CanUpdateProductExecute()
         {

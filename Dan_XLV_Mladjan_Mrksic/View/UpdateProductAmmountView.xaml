@@ -29,20 +29,20 @@
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Row="1" Grid.Column="1" Name="lblAddress" Content="Name" HorizontalAlignment="Right"/>
-                <Label Grid.Row="3" Grid.Column="1" Name="lblPlace" Content="Code" HorizontalAlignment="Right"/>
-                <Label Grid.Row="5" Grid.Column="1" Name="lblState" Content="Price" HorizontalAlignment="Right"/>
-                <Label Grid.Row="7" Grid.Column="1" Name="lblAmmount" Content="Ammount" HorizontalAlignment="Right"/>
+                <Label Grid.Row="1" Grid.Column="1" Name="lblAddress" Content="Name" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <Label Grid.Row="3" Grid.Column="1" Name="lblPlace" Content="Code" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <Label Grid.Row="5" Grid.Column="1" Name="lblState" Content="Price" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <Label Grid.Row="7" Grid.Column="1" Name="lblAmmount" Content="Ammount" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                 <StackPanel Grid.Row="9" Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button Margin="10 25" Background="#545d6a" Foreground="White" FontSize="18" Content="Save" Name="btnSave" Height="30" Width="70" HorizontalAlignment="Left" 
                     Command="{Binding Save, UpdateSourceTrigger=PropertyChanged}"/>
                     <Button Margin="10 25" Background="#545d6a" Foreground="White" FontSize="18" Content="Close" Name="btnClose" Height="30" Width="70" HorizontalAlignment="Right"
                     Command="{Binding Close, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
-                <Label Grid.Row="1" Grid.Column="3" Width="auto" Height="20" Name="txtAddress" Content="{Binding Product.ProductName, UpdateSourceTrigger=PropertyChanged}" Background="#545d6a" Foreground="White" FontSize="12" Margin="0 10"/>
-                <Label Grid.Row="3" Grid.Column="3" Width="auto" Height="20" Name="txtPlace" Content="{Binding Product.ProductCode, UpdateSourceTrigger=PropertyChanged}" Background="#545d6a" Foreground="White" FontSize="12" Margin="0 10"/>
-                <Label Grid.Row="5" Grid.Column="3" Width="auto" Height="20" Name="txtState" Content="{Binding Product.Price, UpdateSourceTrigger=PropertyChanged}" Background="#545d6a" Foreground="White" FontSize="12" Margin="0 10"/>
-                <TextBox Grid.Row="7" Grid.Column="3" Width="auto" Height="20" Name="txtAmmount" Text="{Binding Product.ProductAmmount, UpdateSourceTrigger=PropertyChanged}" Background="#545d6a" Foreground="White" FontSize="12" Margin="0 10"/>
+                <Label Grid.Row="1" Grid.Column="3" Width="auto" Height="25" Name="txtAddress" Content="{Binding Product.ProductName, UpdateSourceTrigger=PropertyChanged}" Background="#545d6a" Foreground="White" FontSize="12" Margin="0 10"/>
+                <Label Grid.Row="3" Grid.Column="3" Width="auto" Height="25" Name="txtPlace" Content="{Binding Product.ProductCode, UpdateSourceTrigger=PropertyChanged}" Background="#545d6a" Foreground="White" FontSize="12" Margin="0 10"/>
+                <Label Grid.Row="5" Grid.Column="3" Width="auto" Height="25" Name="txtState" Content="{Binding Product.Price, UpdateSourceTrigger=PropertyChanged}" Background="#545d6a" Foreground="White" FontSize="12" Margin="0 10"/>
+                <TextBox Grid.Row="7" Grid.Column="3" Width="auto" Height="25" Name="txtAmmount" Text="{Binding Product.ProductAmmount, UpdateSourceTrigger=PropertyChanged}" Background="#545d6a" Foreground="White" FontSize="12" Margin="0 10"/>
             </Grid>
         </Border>
     </Grid>

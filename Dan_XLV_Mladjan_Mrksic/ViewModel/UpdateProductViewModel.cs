@@ -45,11 +45,9 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
         private void SaveExecute()
         {
             try
-            {
-                ManagerView mv = new ManagerView();
+            {                
                 productModel.UpdateProduct(Product);
-                upv.Close();
-                mv.Show();
+                upv.Close();                
             }
             catch (Exception ex)
             {
@@ -84,9 +82,7 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
         {
             try
             {
-                ManagerView mv = new ManagerView();
                 upv.Close();
-                mv.Show();
             }
             catch (Exception ex)
             {

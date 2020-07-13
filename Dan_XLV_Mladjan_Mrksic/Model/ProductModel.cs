@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
+using Dan_XLV_Mladjan_Mrksic.Archive;
 
 namespace Dan_XLV_Mladjan_Mrksic.Model
 {
     class ProductModel
     {
+        ArchiveTool logger = new ArchiveTool();
         public List<Product> GetAllProducts()
         {
             try
@@ -51,6 +53,9 @@ namespace Dan_XLV_Mladjan_Mrksic.Model
                 {
                     Product pr = (from p in context.Products where p.ProductID == ProductID select p).FirstOrDefault();
                     context.Products.Remove(pr);
+
+                    logger.WriteToFile(DateTime.Now + "/ Removed product named " + pr.ProductName + " ,code " + pr.ProductCode + ".");
+
                     context.SaveChanges();
                 }
             }
@@ -75,6 +80,9 @@ namespace Dan_XLV_Mladjan_Mrksic.Model
 
                     context.Products.Add(newProduct);
                     context.SaveChanges();
+
+                    logger.WriteToFile(DateTime.Now + "/ Added new product named " + productToAdd.ProductName + " ,code " + productToAdd.ProductCode + ".");
+
                     return newProduct;
                 }
             }
@@ -106,6 +114,9 @@ namespace Dan_XLV_Mladjan_Mrksic.Model
                         productToUpdate.ProductAmmount = product.ProductAmmount;
                     }
                     context.SaveChanges();
+
+                    logger.WriteToFile(DateTime.Now + "/ Updated product named " + productToUpdate.ProductName + " ,code " + productToUpdate.ProductCode + " to " + product.ProductName + " ,code " + product.ProductCode + ". Ammount is " + product.ProductAmmount + ".");
+
                     return product;
                 }
             }

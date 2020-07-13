@@ -46,10 +46,8 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
         {
             try
             {
-                StockpilerView sv = new StockpilerView();
                 productModel.UpdateProduct(Product);
                 upav.Close();
-                sv.Show();
             }
             catch (Exception ex)
             {
@@ -87,9 +85,7 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
         {
             try
             {
-                StockpilerView mv = new StockpilerView();
                 upav.Close();
-                mv.Show();
             }
             catch (Exception ex)
             {

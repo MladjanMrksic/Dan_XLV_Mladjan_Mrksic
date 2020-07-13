@@ -95,8 +95,8 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
         private void UpdateProductExecute()
         {
             UpdateProductAmmountView update = new UpdateProductAmmountView(product);
-            sv.Close();
             update.Show();
+            Products = productModel.GetAllProducts();
         }
         private bool CanUpdateProductExecute()
         {
