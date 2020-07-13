@@ -67,6 +67,8 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
             return false;
         }
 
+
+
         private ICommand logout;
         public ICommand Logout
         {
@@ -86,6 +88,50 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
             logout.Show();
         }
         private bool CanLogoutExecute()
+        {
+            return true;
+        }
+
+        private ICommand addProduct;
+        public ICommand AddProduct
+        {
+            get
+            {
+                if (addProduct == null)
+                {
+                    addProduct = new RelayCommand(param => AddProductExecute(), param => CanAddProductExecute());
+                }
+                return addProduct;
+            }
+        }
+        private void AddProductExecute()
+        {
+            AddProductView add = new AddProductView();
+            mv.Close();
+            add.Show();
+        }
+        private bool CanAddProductExecute()
+        {
+            return true;
+        }
+
+        private ICommand refresh;
+        public ICommand Refresh
+        {
+            get
+            {
+                if (refresh == null)
+                {
+                    refresh = new RelayCommand(param => RefreshExecute(), param => CanRefreshExecute());
+                }
+                return refresh;
+            }
+        }
+        private void RefreshExecute()
+        {
+            products = productModel.GetAllProducts();
+        }
+        private bool CanRefreshExecute()
         {
             return true;
         }

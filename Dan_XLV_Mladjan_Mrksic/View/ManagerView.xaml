@@ -57,6 +57,10 @@
                 <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
                     <Button Name="btnLogOut" Content="Logout" Width="Auto" Height="20" HorizontalAlignment="Left" Margin="0,0,20,0"
                 Command="{Binding Logout, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold"/>
+                    <Button Name="btnAddProduct" Content="Add Product" Width="Auto" Height="20" HorizontalAlignment="Left" Margin="0,0,20,0"
+                Command="{Binding AddProduct, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold"/>
+                    <Button Name="btnRefresh" Content="Refresh table" Width="Auto" Height="20" HorizontalAlignment="Left" Margin="0,0,20,0"
+                Command="{Binding Refresh, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold"/>
                 </StackPanel>
             </Grid>
         </Border>

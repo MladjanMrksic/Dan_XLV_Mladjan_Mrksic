@@ -15,5 +15,5 @@ ProductName nvarchar(500) not null,
 ProductCode nvarchar(100) not null,
 ProductAmmount int DEFAULT 0 Check (ProductAmmount>=0 and ProductAmmount <101),
 Price decimal (6,2) not null,
-InStock nvarchar(3) Check (UPPER(InStock) = 'YES' or UPPER(InStock) = 'NO') not null
+InStock nvarchar(3) DEFAULT 'NO' Check (UPPER(InStock) = 'YES' or UPPER(InStock) = 'NO') not null
 )
