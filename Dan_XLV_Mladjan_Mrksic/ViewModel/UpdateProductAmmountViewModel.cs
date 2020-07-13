@@ -2,10 +2,6 @@
 using Dan_XLV_Mladjan_Mrksic.Model;
 using Dan_XLV_Mladjan_Mrksic.View;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
@@ -15,21 +11,22 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
     {
         UpdateProductAmmountView upav;
         ProductModel productModel = new ProductModel();
-
+        #region Constructor
         public UpdateProductAmmountViewModel(UpdateProductAmmountView view, Product p)
         {
             upav = view;
             Product = p;
         }
+        #endregion
+        #region Properties
         private Product product;
-
         public Product Product
         {
             get { return product; }
             set { product = value; OnPropertyChanged("Product"); }
         }
-
-
+        #endregion
+        #region Commands
         private ICommand save;
         public ICommand Save
         {
@@ -56,7 +53,7 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
         }
         private bool CanSaveExecute()
         {
-            if (product.ProductAmmount<0 || product.ProductAmmount > 100)
+            if (product.ProductAmmount < 0 || product.ProductAmmount > 100)
             {
                 MessageBox.Show("You can only stockpile 100 units of any product.", "Insufficient storage space", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 product.ProductAmmount = 0;
@@ -96,5 +93,6 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
         {
             return true;
         }
+        #endregion
     }
 }

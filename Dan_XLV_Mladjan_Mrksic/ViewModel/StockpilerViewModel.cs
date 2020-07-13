@@ -1,11 +1,7 @@
 ﻿using Dan_XLV_Mladjan_Mrksic.Command;
 using Dan_XLV_Mladjan_Mrksic.Model;
 using Dan_XLV_Mladjan_Mrksic.View;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Dan_XLV_Mladjan_Mrksic.ViewModel
@@ -14,12 +10,14 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
     {
         StockpilerView sv;
         ProductModel productModel = new ProductModel();
-
+        #region Constructor
         public StockpilerViewModel(StockpilerView view)
         {
             sv = view;
             Products = productModel.GetAllProducts();
         }
+        #endregion
+        #region Properties
         private List<Product> products;
         public List<Product> Products
         {
@@ -28,14 +26,13 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
         }
 
         private Product product;
-
         public Product Product
         {
             get { return product; }
             set { product = value; OnPropertyChanged("Product"); }
         }
-
-
+        #endregion
+        #region Commands
         private ICommand logout;
         public ICommand Logout
         {
@@ -102,5 +99,6 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
         {
             return true;
         }
+        #endregion
     }
 }

@@ -2,10 +2,6 @@
 using Dan_XLV_Mladjan_Mrksic.Model;
 using Dan_XLV_Mladjan_Mrksic.View;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
@@ -15,21 +11,22 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
     {
         UpdateProductView upv;
         ProductModel productModel = new ProductModel();
-
+        #region Constructor
         public UpdateProductViewModel(UpdateProductView view, Product productToUpdate)
         {
             upv = view;
             product = productToUpdate;
         }
-
+        #endregion
+        #region Properties
         private Product product;
-
         public Product Product
         {
             get { return product; }
             set { product = value; OnPropertyChanged("Product"); }
         }
-
+        #endregion
+        #region Commands
         private ICommand save;
         public ICommand Save
         {
@@ -45,9 +42,9 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
         private void SaveExecute()
         {
             try
-            {                
+            {
                 productModel.UpdateProduct(Product);
-                upv.Close();                
+                upv.Close();
             }
             catch (Exception ex)
             {
@@ -93,5 +90,6 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
         {
             return true;
         }
+        #endregion
     }
 }

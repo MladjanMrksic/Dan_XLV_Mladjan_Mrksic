@@ -1,10 +1,6 @@
 ﻿using Dan_XLV_Mladjan_Mrksic.Command;
 using Dan_XLV_Mladjan_Mrksic.Validation;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Dan_XLV_Mladjan_Mrksic.ViewModel
@@ -13,10 +9,13 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
     {
         MainWindow main;
         LoginValidation lv = new LoginValidation();
+        #region Constructor
         public MainWindowViewModel(MainWindow login)
         {
             main = login;
         }
+        #endregion
+        #region Commands
         private ICommand submit;
         public ICommand Submit
         {
@@ -44,6 +43,6 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
                 return true;
             }
         }
-
+        #endregion
     }
 }

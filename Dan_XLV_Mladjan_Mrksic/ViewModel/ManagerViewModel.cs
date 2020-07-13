@@ -1,11 +1,7 @@
 ﻿using Dan_XLV_Mladjan_Mrksic.Command;
 using Dan_XLV_Mladjan_Mrksic.Model;
 using Dan_XLV_Mladjan_Mrksic.View;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Dan_XLV_Mladjan_Mrksic.ViewModel
@@ -14,15 +10,15 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
     {
         ManagerView mv;
         ProductModel productModel = new ProductModel();
-
+        #region Constructor
         public ManagerViewModel(ManagerView view)
         {
             mv = view;
             Products = productModel.GetAllProducts();
         }
-
+        #endregion
+        #region Properties
         private List<Product> products;
-
         public List<Product> Products
         {
             get { return products; }
@@ -30,13 +26,13 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
         }
 
         private Product product;
-
         public Product Product
         {
             get { return product; }
             set { product = value; OnPropertyChanged("Product"); }
         }
-
+        #endregion
+        #region Commands
         private ICommand deleteProduct;
         public ICommand DeleteProduct
         {
@@ -156,5 +152,6 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
         {
             return true;
         }
+        #endregion
     }
 }
