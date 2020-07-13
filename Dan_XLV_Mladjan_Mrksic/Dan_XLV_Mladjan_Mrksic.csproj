@@ -67,6 +67,7 @@
     <Compile Include="ViewModel\AddProductViewModel.cs" />
     <Compile Include="ViewModel\ManagerViewModel.cs" />
     <Compile Include="ViewModel\StockpilerViewModel.cs" />
+    <Compile Include="ViewModel\UpdateProductAmmountViewModel.cs" />
     <Compile Include="ViewModel\UpdateProductViewModel.cs" />
     <Compile Include="View\AddProductView.xaml.cs">
       <DependentUpon>AddProductView.xaml</DependentUpon>
@@ -76,6 +77,9 @@
     </Compile>
     <Compile Include="View\StockpilerView.xaml.cs">
       <DependentUpon>StockpilerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UpdateProductAmmountView.xaml.cs">
+      <DependentUpon>UpdateProductAmmountView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UpdateProductView.xaml.cs">
       <DependentUpon>UpdateProductView.xaml</DependentUpon>
@@ -106,6 +110,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\StockpilerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UpdateProductAmmountView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

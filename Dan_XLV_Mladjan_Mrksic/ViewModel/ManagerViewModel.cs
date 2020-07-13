@@ -152,7 +152,7 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
         }
         private void RefreshExecute()
         {
-            products = productModel.GetAllProducts();
+            Products = productModel.GetAllProducts();
         }
         private bool CanRefreshExecute()
         {

@@ -16,14 +16,14 @@ using System.Windows.Shapes;
 namespace Dan_XLV_Mladjan_Mrksic.View
 {
     /// <summary>
-    /// Interaction logic for StockpilerView.xaml
+    /// Interaction logic for UpdateProductAmmountView.xaml
     /// </summary>
-    public partial class StockpilerView : Window
+    public partial class UpdateProductAmmountView : Window
     {
-        public StockpilerView()
+        public UpdateProductAmmountView(Product product)
         {
             InitializeComponent();
-            DataContext = new StockpilerViewModel(this);
+            DataContext = new UpdateProductAmmountViewModel(this, product);
         }
     }
 }
