@@ -1,0 +1,9 @@
+﻿<Application x:Class="Dan_XLV_Mladjan_Mrksic.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Dan_XLV_Mladjan_Mrksic"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
