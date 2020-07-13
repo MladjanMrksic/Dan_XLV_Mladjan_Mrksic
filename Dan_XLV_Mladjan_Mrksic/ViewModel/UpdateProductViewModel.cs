@@ -11,18 +11,19 @@ using System.Windows.Input;
 
 namespace Dan_XLV_Mladjan_Mrksic.ViewModel
 {
-    class AddProductViewModel : ViewModelBase
+    class UpdateProductViewModel : ViewModelBase
     {
-        AddProductView apv;
+        UpdateProductView upv;
         ProductModel productModel = new ProductModel();
 
-        public AddProductViewModel(AddProductView view)
+        public UpdateProductViewModel(UpdateProductView view, Product productToUpdate)
         {
-            apv = view;
-            product = new Product();
+            upv = view;
+            product = productToUpdate;
         }
 
         private Product product;
+
         public Product Product
         {
             get { return product; }
@@ -46,8 +47,8 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
             try
             {
                 ManagerView mv = new ManagerView();
-                productModel.AddProduct(Product);
-                apv.Close();
+                productModel.UpdateProduct(Product);
+                upv.Close();
                 mv.Show();
             }
             catch (Exception ex)
@@ -84,7 +85,7 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
             try
             {
                 ManagerView mv = new ManagerView();
-                apv.Close();
+                upv.Close();
                 mv.Show();
             }
             catch (Exception ex)
@@ -96,6 +97,5 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
         {
             return true;
         }
-
     }
 }

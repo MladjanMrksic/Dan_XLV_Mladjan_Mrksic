@@ -115,6 +115,29 @@ namespace Dan_XLV_Mladjan_Mrksic.ViewModel
             return true;
         }
 
+        private ICommand updateProduct;
+        public ICommand UpdateProduct
+        {
+            get
+            {
+                if (updateProduct == null)
+                {
+                    updateProduct = new RelayCommand(param => UpdateProductExecute(), param => CanUpdateProductExecute());
+                }
+                return updateProduct;
+            }
+        }
+        private void UpdateProductExecute()
+        {
+            UpdateProductView update = new UpdateProductView(product);
+            mv.Close();
+            update.Show();
+        }
+        private bool CanUpdateProductExecute()
+        {
+            return true;
+        }
+
         private ICommand refresh;
         public ICommand Refresh
         {

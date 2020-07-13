@@ -37,7 +37,7 @@
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <Button Name="btnUpdateFoodOrder"
-                                        Command="{Binding DataContext.UpdateFoodOrder, RelativeSource={RelativeSource FindAncestor,
+                                        Command="{Binding DataContext.UpdateProduct, RelativeSource={RelativeSource FindAncestor,
                                     AncestorType={x:Type Window}},UpdateSourceTrigger=PropertyChanged}"  Content="Update"/>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>

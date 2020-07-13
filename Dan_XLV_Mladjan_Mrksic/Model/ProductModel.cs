@@ -95,7 +95,7 @@ namespace Dan_XLV_Mladjan_Mrksic.Model
                     productToUpdate.ProductName = product.ProductName;
                     productToUpdate.ProductCode = product.ProductCode;
                     productToUpdate.Price = product.Price;                 
-                    if (product.ProductAmmount > 100 || product.ProductAmmount <0)
+                    if (product.ProductAmmount > 100 || product.ProductAmmount <1)
                     {
                         productToUpdate.InStock = "NO";
                         productToUpdate.ProductAmmount = 0;
