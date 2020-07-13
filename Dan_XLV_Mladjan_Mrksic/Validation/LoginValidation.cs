@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dan_XLV_Mladjan_Mrksic.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,13 +14,15 @@ namespace Dan_XLV_Mladjan_Mrksic.Validation
         {
             if (username == "Man2019" && password == "Man2019")
             {
-                //Create ManagerView and open it
+                ManagerView mv = new ManagerView();
                 main.Close();
+                mv.Show();
             }
             else if (username == "Mag2019" && password == "Mag2019")
             {
-                //Create MagacionerView and open it
+                StockpilerView sv = new StockpilerView();
                 main.Close();
+                sv.Show();
             }
             else
             {
